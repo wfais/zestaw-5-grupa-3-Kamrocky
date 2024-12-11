@@ -1,19 +1,20 @@
 import numpy as np
 
+
 class MonitorowanaTablica:
 
     def __init__(self, od=0, do=1000, elem=50, tryb="R"):
-        np.random.seed(0) # generator wylicza zawsze taki sam ciag
-        if tryb=="R":
+        np.random.seed(0)  # generator wylicza zawsze taki sam ciag
+        if tryb == "R":
             self.tablica = np.linspace(od, do, elem, dtype=np.int64)
             np.random.shuffle(self.tablica)
-        elif tryb=="S":
+        elif tryb == "S":
             self.tablica = np.linspace(od, do, elem, dtype=np.int64)
-        elif tryb=="A":
+        elif tryb == "A":
             self.tablica = np.linspace(do, od, elem, dtype=np.int64)
-        elif tryb=="T":
-            __tablica = np.linspace(od, (do-od)//3, elem//3, dtype=np.int64)
-            self.tablica = np.concatenate((__tablica,__tablica,__tablica))
+        elif tryb == "T":
+            __tablica = np.linspace(od, (do - od) // 3, elem // 3, dtype=np.int64)
+            self.tablica = np.concatenate((__tablica, __tablica, __tablica))
         self.reset()
 
     def reset(self):

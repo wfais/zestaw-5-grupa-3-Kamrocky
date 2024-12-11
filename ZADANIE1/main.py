@@ -3,11 +3,10 @@ from ZADANIE1.histogram import plot_histogram
 from ZADANIE1.tablica import MonitorowanaTablica
 from ZADANIE1.algorytmy import algorytmy
 
-
-
 N = 50
 FPS = 60
 TRYBY = ["R", "S", "A", "T"]
+
 
 def wykonaj_pomiar():
     wszystkie_pomiary = []
@@ -55,6 +54,8 @@ def zapisz(pomiary, filename="pomiary.txt"):
 def main():
     pomiary = wykonaj_pomiar()
     zapisz(pomiary)
+
+
 ################################################################
 
 
