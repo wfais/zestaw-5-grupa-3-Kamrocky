@@ -1,11 +1,15 @@
 from itertools import product
 
 
-
 def maximize_expression(K, M, lists):
-    # twoj kod tutaj
-    pass 
+    combinations = product(*lists)
 
+    max_value = 0
+    for combination in combinations:
+        current_value = sum(x ** 2 for x in combination) % M
+        max_value = max(max_value, current_value)
+
+    return max_value
 
 
 if __name__ == "__main__":

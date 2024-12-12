@@ -9,7 +9,7 @@ def plot_histogram(tablica: MonitorowanaTablica, algo_name: str, fps=60):
     Argumenty:
     tablica (MonitorowanaTablica): tablica do posortowania
     algo_name (str): nazwa algorytmu
-    fps (int): liczba klatek na sekunde w animiacj 
+    fps (int): liczba klatek na sekunde w animiacji
     '''
     plt.rcParams['font.size'] = 16
     fig, ax = plt.subplots(figsize=(16, 8))
@@ -23,7 +23,7 @@ def plot_histogram(tablica: MonitorowanaTablica, algo_name: str, fps=60):
         '''Aktualizacja histogramu po kazdym kroku sortowania.
         
         Argumenty:
-        frame (int): Aktualnyu indeks klatki.
+        frame (int): Aktualny indeks klatki.
         '''
         txt.set_text(f'Operations = {frame}')
         for rectangle, height in zip(container.patches, tablica.pelne_kopie[frame]):
@@ -38,5 +38,6 @@ def plot_histogram(tablica: MonitorowanaTablica, algo_name: str, fps=60):
 
         return (txt, *container)
 
-    ani = FuncAnimation(fig, update, frames=range(len(tablica.pelne_kopie)), blit=True, interval=1000./fps, repeat=False)
+    ani = FuncAnimation(fig, update, frames=range(len(tablica.pelne_kopie)), blit=True, interval=1000. / fps,
+                        repeat=False)
     plt.show()
